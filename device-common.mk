@@ -668,4 +668,56 @@ PRODUCT_PACKAGES_DEBUG += a_sns_test
 
 # Write flags to the vendor space in /misc partition.
 PRODUCT_PACKAGES += \
-    misc_writer
+    misc_writer \
+    android.hardware.drm@1.1-service.clearkey
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    drm.service.enabled=true \
+    media.mediadrmservice.enable=true
+
+# Sensors
+PRODUCT_PACKAGES += \
+    libsensorndkbridge
+
+# Tool
+PRODUCT_PACKAGES += \
+    libtinyxml
+
+# VR Services
+PRODUCT_PACKAGES += \
+    bufferhubd \
+    performanced \
+    virtual_touchpad \
+    vr_hwc
+
+# Low Memory Killer Daemon configuration
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.lmk.low=1001 \
+    ro.lmk.medium=800 \
+    ro.lmk.critical=0 \
+    ro.lmk.critical_upgrade=false \
+    ro.lmk.upgrade_pressure=100 \
+    ro.lmk.downgrade_pressure=100 \
+    ro.lmk.kill_heaviest_task=true \
+    ro.lmk.kill_timeout_ms=100 \
+    ro.lmk.use_minfree_levels=true
+
+# Always preopt extracted APKs to prevent
+# extracting out of the APK for gms modules.
+PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
+
+# microG
+PRODUCT_PACKAGES += \
+	GmsCore \
+    GsfProxy \
+    MozillaNlpBackend \
+    OpenWeatherMapWeatherProvider \
+    FDroid \
+    FakeStore \
+    com.google.android.maps.jar \
+	com.google.android.maps.xml \
+	org.microg.xml
+
+# Google apps
+# $(call inherit-product-if-exists, vendor/gapps/gapps.mk)
+
