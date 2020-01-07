@@ -2,10 +2,10 @@
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
 
-# Inherit PR-OS product configuration
+# Inherit ROM configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, vendor/omni/config/branding.mk)
-# $(call inherit-product, vendor/omni/config/phone-xxxhdpi-3072-dalvik-heap.mk)
+$(call inherit-product, device/google/marlin/device-extra.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/google/marlin/aosp_marlin.mk)
