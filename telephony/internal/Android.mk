@@ -8,7 +8,7 @@ LOCAL_SRC_FILES := $(call all-java-files-under, src/org) \
     $(call all-logtags-files-under, src/org)
 
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE := telephony-ext
+LOCAL_MODULE := telephony-ext_marlin
 LOCAL_MODULE_OWNER := qti
 
 include $(BUILD_JAVA_LIBRARY)
