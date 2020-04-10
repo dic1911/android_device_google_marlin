@@ -42,9 +42,6 @@ PRODUCT_COPY_FILES += \
 
 DEVICE_PACKAGE_OVERLAYS += device/google/marlin/overlay
 
-PRODUCT_ENFORCE_RRO_TARGETS := \
-    framework-res
-
 # Input device files
 PRODUCT_COPY_FILES += \
     device/google/marlin/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl \
@@ -708,15 +705,16 @@ PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 
 # microG
 PRODUCT_PACKAGES += \
-	GmsCore \
+    GmsCore \
     GsfProxy \
     MozillaNlpBackend \
     OpenWeatherMapWeatherProvider \
     FDroid \
     FakeStore \
     com.google.android.maps.jar \
-	com.google.android.maps.xml \
-	org.microg.xml
+    com.google.android.maps.xml \
+    org.microg.xml \
+    microg-a5k
 
 # Google apps
 # $(call inherit-product-if-exists, vendor/gapps/gapps.mk)
